@@ -10,6 +10,13 @@ const getInputMock = jest.spyOn(core, 'getInput').mockImplementation()
 const setFailedMock = jest.spyOn(core, 'setFailed').mockImplementation()
 const setOutputMock = jest.spyOn(core, 'setOutput').mockImplementation()
 
+// At the top of your test file, mock the module that contains installLatestVersion
+jest.mock('../src/install-latest-version', () => ({
+  installLatestVersion: jest.fn().mockImplementation(() => Promise.resolve())
+}))
+
+// Your existing test code remains unchanged
+
 // Mock the action's main function
 const runMock = jest.spyOn(main, 'run')
 
@@ -38,11 +45,11 @@ describe('action', () => {
     // Verify that all of the core library functions were called correctly
     expect(debugMock).toHaveBeenNthCalledWith(1, 'Waiting 500 milliseconds ...')
     expect(debugMock).toHaveBeenNthCalledWith(
-      2,
+      3,
       expect.stringMatching(timeRegex)
     )
     expect(debugMock).toHaveBeenNthCalledWith(
-      3,
+      4,
       expect.stringMatching(timeRegex)
     )
     expect(setOutputMock).toHaveBeenNthCalledWith(
