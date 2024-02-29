@@ -16,4 +16,4 @@ outputs:
 
 runs:
   using: node20
-  main: dist/create/index.js
+  main: ../dist/create/index.js
