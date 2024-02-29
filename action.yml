@@ -1,6 +1,6 @@
-name: 'The name of your action here'
+name: 'Diffblue Cover install'
 description: 'Provide a description here'
-author: 'Your name or organization here'
+author: 'Diffblue Ltd'
 
 # Define your inputs here.
 inputs:
