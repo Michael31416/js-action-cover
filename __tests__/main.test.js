@@ -2,7 +2,7 @@
  * Unit tests for the action's main functionality, src/main.js
  */
 const core = require('@actions/core')
-const main = require('../src/main')
+const main = require('../src/install/main')
 
 // Mock the GitHub Actions core library
 const debugMock = jest.spyOn(core, 'debug').mockImplementation()
@@ -11,7 +11,7 @@ const setFailedMock = jest.spyOn(core, 'setFailed').mockImplementation()
 const setOutputMock = jest.spyOn(core, 'setOutput').mockImplementation()
 
 // At the top of your test file, mock the module that contains installLatestVersion
-jest.mock('../src/install-latest-version', () => ({
+jest.mock('../src/install/install-latest-version', () => ({
   installLatestVersion: jest.fn().mockImplementation(() => Promise.resolve())
 }))
 

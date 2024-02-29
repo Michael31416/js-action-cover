@@ -23,13 +23,15 @@
   "engines": {
     "node": ">=20"
   },
-  "scripts": {
+    "scripts": {
     "bundle": "npm run format:write && npm run package",
     "ci-test": "jest",
     "format:write": "prettier --write **/*.js",
     "format:check": "prettier --check **/*.js",
     "lint": "npx eslint . -c ./.github/linters/.eslintrc.yml",
-    "package": "ncc build src/index.js --license licenses.txt",
+    "package": "npm run package:index && npm run package:create",
+    "package:index": "ncc build src/install/index.js --license licenses.txt -o dist/install",
+    "package:create": "ncc build src/create/index.js --license licenses.txt -o dist/create",
     "package:watch": "npm run package -- --watch",
     "test": "(jest && make-coverage-badge --output-path ./badges/coverage.svg) || make-coverage-badge --output-path ./badges/coverage.svg",
     "all": "npm run format:write && npm run lint && npm run test && npm run package"

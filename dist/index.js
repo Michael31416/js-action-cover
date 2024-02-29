@@ -6695,6 +6695,10 @@ async function run() {
     await installLatestVersion()
     await exec.exec('dcover', ['--version'])
     core.endGroup()
+
+    core.startGroup('Create')
+    await exec.exec('dcover', ['create'])
+    core.endGroup()
   } catch (error) {
     // Fail the workflow run if an error occurs
     core.setFailed(error.message)
