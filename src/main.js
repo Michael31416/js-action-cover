@@ -7,7 +7,7 @@ const exec = require('@actions/exec')
  */
 async function run() {
   try {
-    const args = core.getInput('ARGS', { required: true })
+    const args = core.getInput('args', { required: true })
 
     core.debug(`Arguments: ${args}`)
 

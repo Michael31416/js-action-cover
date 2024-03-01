@@ -3965,7 +3965,7 @@ const exec = __nccwpck_require__(514)
  */
 async function run() {
   try {
-    const args = core.getInput('ARGS', { required: true })
+    const args = core.getInput('args', { required: true })
 
     core.debug(`Arguments: ${args}`)
 

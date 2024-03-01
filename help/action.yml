@@ -1,0 +1,23 @@
+name: 'Diffblue Cover help'
+description: 'Provide a description here'
+author: 'Diffblue Ltd'
+
+# Define your inputs here.
+inputs:
+  args:
+    description: 'Arguments for help command'
+    required: false
+    default: ''
+
+# Define your outputs here.
+#outputs:
+#  time:
+#    description: 'Your output description here'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Diffblue Cover Help
+      uses: Michael31416/js-action-cover@main
+      with:
+        args: help ${{ input.args }}

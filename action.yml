@@ -4,7 +4,7 @@ author: 'Diffblue Ltd'
 
 # Define your inputs here.
 inputs:
-  ARGS:
+  args:
     description: 'Command line arguments for the cover'
     required: true
     default: '--version'
