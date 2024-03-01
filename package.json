@@ -29,9 +29,10 @@
     "format:write": "prettier --write **/*.js",
     "format:check": "prettier --check **/*.js",
     "lint": "npx eslint . -c ./.github/linters/.eslintrc.yml",
-    "package": "npm run package:index && npm run package:create",
+    "package": "npm run package:index && npm run package:create && npm run package:main",
     "package:index": "ncc build src/install/index.js --license licenses.txt -o dist/install",
     "package:create": "ncc build src/create/index.js --license licenses.txt -o dist/create",
+    "package:main": "ncc build src/index.js --license licenses.txt -o dist/",
     "package:watch": "npm run package -- --watch",
     "test": "(jest && make-coverage-badge --output-path ./badges/coverage.svg) || make-coverage-badge --output-path ./badges/coverage.svg",
     "all": "npm run format:write && npm run lint && npm run test && npm run package"
