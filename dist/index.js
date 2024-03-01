@@ -3957,7 +3957,6 @@ exports["default"] = _default;
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const core = __nccwpck_require__(186)
-const { wait } = __nccwpck_require__(653)
 const { lookupLatestVersion } = __nccwpck_require__(930)
 const { installLatestVersion } = __nccwpck_require__(734)
 const exec = __nccwpck_require__(514)
@@ -4001,14 +4000,6 @@ module.exports = eval("require")("./install-latest-version");
 /***/ ((module) => {
 
 module.exports = eval("require")("./lookup-latest-version");
-
-
-/***/ }),
-
-/***/ 653:
-/***/ ((module) => {
-
-module.exports = eval("require")("./wait");
 
 
 /***/ }),

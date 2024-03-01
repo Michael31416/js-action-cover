@@ -1,5 +1,4 @@
 const core = require('@actions/core')
-const { wait } = require('./wait')
 const { lookupLatestVersion } = require('./lookup-latest-version')
 const { installLatestVersion } = require('./install-latest-version')
 const exec = require('@actions/exec')
