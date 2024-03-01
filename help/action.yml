@@ -20,4 +20,4 @@ runs:
     - name: Diffblue Cover Help
       uses: Michael31416/js-action-cover@main
       with:
-        args: help ${{ input.args }}
+        args: help ${{ inputs.args }}
