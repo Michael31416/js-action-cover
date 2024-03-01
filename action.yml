@@ -1,0 +1,19 @@
+name: 'Diffblue Cover General Action'
+description: 'Provide a description here'
+author: 'Diffblue Ltd'
+
+# Define your inputs here.
+inputs:
+  ARGS:
+    description: 'Command line arguments for the cover'
+    required: true
+    default: '--version'
+
+# Define your outputs here.
+outputs:
+  stdout:
+    description: 'StdOut'
+
+runs:
+  using: node20
+  main: dist/index.js
