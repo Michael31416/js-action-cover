@@ -3967,11 +3967,11 @@ async function run() {
   try {
     const args = core.getInput('ARGS', { required: true })
 
-    // Debug logs are only output if the `ACTIONS_STEP_DEBUG` secret is true
     core.debug(`Arguments: ${args}`)
 
     core.startGroup('Running cover')
-    await exec.exec('dcover', [args])
+    const commandLine = `dcover ${args}`
+    await exec.exec(commandLine, [], { shell: true })
     core.endGroup()
   } catch (error) {
     // Fail the workflow run if an error occurs
